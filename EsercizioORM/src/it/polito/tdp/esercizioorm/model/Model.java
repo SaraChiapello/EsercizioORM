@@ -28,8 +28,19 @@ public class Model {
 	}
 
 	public int getTotCreditiFromStudente(int matricola) {
-		// TODO Auto-generated method stub
-		return 0;
+		int sum=0;
+		for(Studente s: studenti) {
+			if(s.getMatricola()==matricola) {
+				for(Corso c:s.getCorsi()) {
+					sum+=c.getCrediti();
+				}
+				return sum;
+				
+			}
+			
+		}
+			
+		return -1;
 	}
 
 }
